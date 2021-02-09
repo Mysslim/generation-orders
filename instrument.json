@@ -1,0 +1,9 @@
+{
+    "instrument" : [
+        {
+            "id" : 1,
+            "quotation" : "EUR/RUB",
+            "course" : 92.018     
+        }
+    ]
+}
