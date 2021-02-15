@@ -1,0 +1,48 @@
+{
+    "tag" : [
+        {
+            "id" : 0,
+            "tag" : "fast"
+        },
+        {
+            "id" : 1,
+            "tag" : "dealing"
+        },
+        {
+            "id" : 2,
+            "tag" : "value"
+        },
+        {
+            "id" : 3,
+            "tag" : "USD"
+        },
+        {
+            "id" : 4,
+            "tag" : "course"
+        },
+        {
+            "id" : 5,
+            "tag" : "1$ = 5₴"
+        },
+        {
+            "id" : 6,
+            "tag" : "finance"
+        },
+        {
+            "id" : 7,
+            "tag" : "EUR"
+        },
+        {
+            "id" : 8,
+            "tag" : "UAH"
+        },
+        {
+            "id" : 9,
+            "tag" : "score"
+        },
+        {
+            "id" : 10,
+            "tag" : "quickly"
+        }
+    ]
+}

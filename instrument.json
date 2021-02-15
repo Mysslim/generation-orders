@@ -1,9 +1,59 @@
 {
     "instrument" : [
         {
-            "id" : 1,
+            "id" : 0,
             "quotation" : "EUR/RUB",
             "course" : 92.018     
+        },
+        {
+            "id" : 1,
+            "quotation" :"EUR/USD",
+            "course" : 1.238
+        },
+        {
+            "id" : 2,
+            "quotation" :"EUR/JPY",
+            "course" : 127.11
+        },
+        {
+            "id" : 3,
+            "quotation" :"USD/RUB",
+            "course" : 75.955
+        },
+        {
+            "id" : 4,
+            "quotation" :"USD/UAH",
+            "course" : 28.159
+        },
+        {
+            "id" : 5,
+            "quotation" :"GBP/UAH",
+            "course" : 38.594
+        },
+        {
+            "id" : 6,
+            "quotation" :"USD/CHF",
+            "course" : 0.891
+        },
+        {
+            "id" : 7,
+            "quotation" :"JPY/USD",
+            "course" : 0.0096
+        },
+        {
+            "id" : 8,
+            "quotation" :"GBP/USD",
+            "course" : 1.2212
+        },
+        {
+            "id" : 9,
+            "quotation" :"NZD/USD",
+            "course" : 0.7184
+        },
+        {
+            "id" : 10,
+            "quotation" :"USD/JPY",
+            "course" : 104.7
         }
     ]
 }
