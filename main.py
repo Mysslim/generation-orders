@@ -1,6 +1,8 @@
 import configparser
+import logging
+from datetime import datetime
 import json
-from os import stat
+
 
 def init():
     global config
@@ -19,8 +21,17 @@ def setup():
 
 #     if persent_started + persent_unfinish >= 100:
 
+def get_count_element_in_JSON_file(path_to):
+    volumes = get_volume_with_JSON(path_to)
+    count = 0
+    
+    for volume in volumes:
+        count += 1
+
+    return count
+
 def congruent_method(x_previos, a, c, M):
-    return (int(a) * int(x_previos) + int(c)) % int(M)
+    return (float(a) * float(x_previos) + float(c)) % float(M)
 
 def get_volume_for_congruent_method_with_config(partition):
     return (float(config[partition]["SEED"]), 
@@ -33,8 +44,7 @@ def get_volume_via_id_and_key(id, key, path_to):
     return volumes[id][key]
 
 def get_volume_with_JSON(path_to):
-    path_to_json = config["path_to"][path_to]
-    with open(path_to_json, "r") as JSON_file:
+    with open(path_to, "r") as JSON_file:
         volumes = json.load(JSON_file)
         for volume in volumes:
             return volumes[volume]
@@ -93,8 +103,9 @@ def genering_pxs_fill():
     pseudo_gen_volumes = pseudo_genering_volumes(count_orders, "px_fill")
 
     for order in range(0, count_orders):
+        id_instrument = instruments[id_orders[order]]
+        px_init = get_volume_via_id_and_key(id_instrument, "course", "JSON_FILE_INSTRUMENT")
         difference = pseudo_gen_volumes[order] * comma_wrap
-        px_init = get_volume_via_id_and_key(instruments[id_orders[order]], "course", "JSON_FILE_INSTRUMENT")
         px_fill = 0.0
 
         if pseudo_gen_volumes[order] % 3 == 0:
@@ -162,7 +173,10 @@ def genering_volumes_fill():
 
 def genering_dates():
     dates = {}
+    count_records = 7200
+    pseudo_gen_volumes = pseudo_genering_volumes(count_records, "date")
 
+    datetime.fromtimestamp(pseudo_gen_volumes[0]) # float to datetime
     return dates
 
 def genering_statuses():
@@ -200,7 +214,44 @@ def genering_notes():
 
     return notes
 
+def genering_combinations_of_tags():
+    combination_of_tags = []
+    path_to_json_tags = config["json"]["JSON_FILE_TAG"]
+    count_combination = int(config["some_setting"]["COUNT_COMBINATION_OF_TAGS"])
+    count_tags = get_count_element_in_JSON_file(path_to_json_tags)
+    
+    count_pseudo_gen_volumes = count_tags * count_combination
+    pseudo_gen_volumes = pseudo_genering_volumes(count_pseudo_gen_volumes, "array_tag")
+
+    for combination in range(0, count_combination):
+        tags = ""
+        for tag in range(0, count_tags):
+            index_for_volume = combination + tag
+
+            if pseudo_gen_volumes[index_for_volume] % 2 == 0:
+                tag = get_volume_via_id_and_key(tag, "tag", path_to_json_tags)
+                tags += tag + " "
+        
+        combination_of_tags.append(tags)
+            
+    return combination_of_tags
+
+def genering_tags():
+    tags = {}
+    id_orders = genering_id_orders()
+    combinations_of_tags = genering_combinations_of_tags()
+    count_tags = int(config["some_setting"]["COUNT_ORDERS"])
+    pseudo_gen_volumes = pseudo_genering_volumes(count_tags, "tag")
+
+    for order in range(0, count_tags):
+        id_order = id_orders[order]
+        id_combination_tags = pseudo_gen_volumes[order]
+        combination_tags = combinations_of_tags[id_combination_tags]
+        tags.update({id_order : combination_tags})  
+
+    return tags
+
 if __name__ == "__main__":
     init()
     setup()
-    print(genering_notes())
+    print(genering_dates())
