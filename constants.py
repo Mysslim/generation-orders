@@ -6,11 +6,15 @@ COUNT_RECORDS = 7200
 
 COUNT_COMBINATION_OF_TAGS = 60
 
-PERSENT_STARTED_ORDERS = 30
+COUNT_STARTED_ORDERS = 600
 
-PERSENT_UNFINISH_ORDERS = 10
+COUNT_FULL_ORDERS = 1200
+
+COUNT_UNFINISH_ORDERS = 200
 
 FORMAT_DATA_WITHOUT_MICROSECOND = "%d.%m.%Y %H:%M:%S"
+
+FORMAT_FOR_LOGGER = "%(asctime)s-%(levelname)s-%(message)s"
 
 INSTRUMENTS = [
     ["EUR/RUB", 92.018],
@@ -41,16 +45,16 @@ TAGS = [
 ]
 
 NOTES = [
-    "this text is 1 note, some text to make the note look long"
-    "this text is 2 note, some text to make the note look long"
-    "this text is 3 note, some text to make the note look long"
-    "this text is 4 note, some text to make the note look long"
-    "this text is 5 note, some text to make the note look long"
-    "this text is 6 note, some text to make the note look long"
-    "this text is 7 note, some text to make the note look long"
-    "this text is 8 note, some text to make the note look long"
-    "this text is 9 note, some text to make the note look long"
-    "this text is 10 note, some text to make the note look long"
+    "this text is 1 note, some text to make the note look long",
+    "this text is 2 note, some text to make the note look long",
+    "this text is 3 note, some text to make the note look long",
+    "this text is 4 note, some text to make the note look long",
+    "this text is 5 note, some text to make the note look long",
+    "this text is 6 note, some text to make the note look long",
+    "this text is 7 note, some text to make the note look long",
+    "this text is 8 note, some text to make the note look long",
+    "this text is 9 note, some text to make the note look long",
+    "this text is 10 note, some text to make the note look long",
     "this text is 11 note, some text to make the note look long"
 ]
 
@@ -67,3 +71,9 @@ STATUSES = [
     "Cancel",
     "Done"
 ]
+
+TEMPLATE_FOR_STATUS = {
+        COUNT_STARTED_ORDERS: [STATUSES[1], STATUSES[2], STATUSES[5]],
+        COUNT_FULL_ORDERS: [STATUSES[0], STATUSES[1], STATUSES[2], STATUSES[5]],
+        COUNT_UNFINISH_ORDERS : [STATUSES[0], STATUSES[1], STATUSES[2]]
+    }
