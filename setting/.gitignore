@@ -1,6 +1,0 @@
-# created by virtualenv automatically
-*.ods#
-__pycache__
-pyvenv.cfg
-json
-logs
