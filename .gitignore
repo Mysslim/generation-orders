@@ -1,0 +1,8 @@
+logs
+*.log
+*.ods#
+gitignore
+
+.vscode
+__pycache__
+
