@@ -16,6 +16,8 @@ FORMAT_DATA_WITHOUT_MICROSECOND = "%Y-%m-%d %H:%M:%S"
 
 FORMAT_FOR_LOGGER = "%(asctime)s-%(levelname)s-%(message)s"
 
+PATH_TO_JSON = "settings/data.json"
+
 INSTRUMENTS = [
     ["EUR/RUB", 92.018],
     ["EUR/USD", 1.238],

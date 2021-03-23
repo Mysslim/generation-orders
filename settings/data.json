@@ -1,0 +1,83 @@
+{
+    "instruments": [
+        { 
+            "quotation" : "EUR/RUB",
+            "course" : 92.018 
+        },
+        { 
+            "quotation" : "EUR/JPY",
+            "course" : 127.1 
+        },
+        { 
+            "quotation" : "USD/RUB",
+            "course" : 75.955 
+        },
+        { 
+            "quotation" : "USD/UAH",
+            "course" : 28.159 
+        },
+        { 
+            "quotation" : "GBP/UAH",
+            "course" : 38.594 
+        },
+        { 
+            "quotation" : "USD/CHF",
+            "course" : 0.891
+        },
+        { 
+            "quotation" : "JPY/USD",
+            "course" : 0.0096
+        },
+        { 
+            "quotation" : "GBP/USD",
+            "course" : 1.2212 
+        },
+        {
+            "quotation" : "NZD/USD",
+            "course" : 0.7184 
+        },
+        { 
+            "quotation" : "USD/JPY",
+            "course" : 104.7
+        }
+    ],
+
+    "tags": [
+        { "tag" : "fast" },
+        { "tag" : "dealing" },
+        { "tag" : "value" },
+        { "tag" : "USD" },
+        { "tag" : "course" },
+        { "tag" : "1$ = 5₴" },
+        { "tag" : "finance" },
+        { "tag" : "EUR" },
+        { "tag" : "UAH" },
+        { "tag" : "score" },
+        { "tag" : "quickly" }
+    ],
+
+    "notes": [
+        { "note" : "this text is 1 note, some text to make the note look long" },
+        { "note" : "this text is 2 note, some text to make the note look long" },
+        { "note" : "this text is 3 note, some text to make the note look long" },
+        { "note" : "this text is 4 note, some text to make the note look long" },
+        { "note" : "this text is 5 note, some text to make the note look long" },
+        { "note" : "this text is 6 note, some text to make the note look long" },
+        { "note" : "this text is 7 note, some text to make the note look long" },
+        { "note" : "this text is 8 note, some text to make the note look long" },
+        { "note" : "this text is 9 note, some text to make the note look long" },
+        { "note" : "this text is 10 note, some text to make the note look long" },
+        { "note" : "this text is 11 note, some text to make the note look long" }
+    ],
+    
+    "sides": [
+        {"side" : "Buy" },
+        {"side" : "Sell"}
+    ],
+    
+    "statuses":[
+        { "status" : "Fill" },
+        { "status" : "ParticalFill" },
+        { "status" : "Cancel"  }
+    ]
+}
