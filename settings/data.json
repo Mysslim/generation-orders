@@ -6,7 +6,7 @@
         },
         { 
             "quotation" : "EUR/JPY",
-            "course" : 127.1 
+            "course" : 127.142 
         },
         { 
             "quotation" : "USD/RUB",
@@ -26,19 +26,19 @@
         },
         { 
             "quotation" : "JPY/USD",
-            "course" : 0.0096
+            "course" : 0.009
         },
         { 
             "quotation" : "GBP/USD",
-            "course" : 1.2212 
+            "course" : 1.221 
         },
         {
             "quotation" : "NZD/USD",
-            "course" : 0.7184 
+            "course" : 0.718 
         },
         { 
             "quotation" : "USD/JPY",
-            "course" : 104.7
+            "course" : 104.783
         }
     ],
 

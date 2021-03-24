@@ -1,8 +1,9 @@
 import logging
 import configparser
+from storages import MySqlRepository
 
 from settings.constants import FORMAT_FOR_LOGGER
-from generators import *
+from builder import BuilderGeneratorAsset
 
 def setup_logger(config):
     logging.basicConfig(
@@ -11,14 +12,38 @@ def setup_logger(config):
         level = config["logging"]["LEVEL_LOG"],
         format = FORMAT_FOR_LOGGER)
 
-
-if __name__ == "__main__":
+def setup_config():
     config = configparser.ConfigParser()
-    config.read("settings/config.ini")
+
+    try:
+        config.read("settings/config.ini")
+    except FileNotFoundError:
+        logging.error("config not found, stop working")
+    
+    return config
+
+def setup():
+    
+    config = setup_config()
     setup_logger(config)
 
-    al = GeneratorHistoryRecord(config)
+    return config
 
-    al.already_open_orders()
-    # al.completed_orders()
-    # al.unfinished_orders()
+def workflow(config):
+
+    build = BuilderGeneratorAsset(config)
+    repository = MySqlRepository(config)
+    repository.setup()
+
+    for strategy in range(build.get_count_strategies()):
+        for asset in range(build.get_count_assets(strategy)):
+            repository.insert(build.get_records(strategy))
+
+    repository.close
+
+if __name__ == "__main__":
+    config = setup()
+    workflow(config)
+
+    
+
