@@ -1,5 +1,5 @@
 import json
-from os import name
+import logging
 from settings.constants import PATH_TO_JSON
 
 
@@ -13,7 +13,9 @@ class JsonGetter:
             if num_element >= len(dict[name_array]):
                 num_element = len(dict[name_array]) - 1
 
-            return dict[name_array][int(num_element)][element]
+            volume = dict[name_array][int(num_element) - 1][element]
+            logging.debug("get volume in json num_element: {0}, volume: {1}".format(num_element, volume))
+            return volume
 
     def get_count_of_name_array(name_array):
         with open(PATH_TO_JSON, 'r') as json_file:

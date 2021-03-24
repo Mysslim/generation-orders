@@ -52,7 +52,9 @@ class IDInstrumentGenerator(Generator):
         self.set_congruent_method(config)
 
     def generate_data(self, range_of_assets):
-        return self._congruent_method.get_current_volume()
+        id_instrument = self._congruent_method.get_current_volume()
+        logging.debug("generate new id_instrument: {0}".format(id_instrument))
+        return id_instrument
 
 class PxFillGenerator(Generator):
 
