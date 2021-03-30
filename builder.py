@@ -17,8 +17,7 @@ class BuilderGeneratorAsset:
     def get_count_assets(self, index_of_generator: int):
         return self.__strategies[index_of_generator].count_assets
 
-    def get_records(self, index_of_generator: int):
+    def get_asset(self, index_of_generator: int):
         asset = self.__strategies[index_of_generator].generate_asset()
-        records = MappingAssetInRecord.get_records_from_asset(asset)
-
-        return records
+        
+        return asset

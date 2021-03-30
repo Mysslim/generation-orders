@@ -37,7 +37,9 @@ def workflow(config):
 
     for strategy in range(build.get_count_strategies()):
         for asset in range(build.get_count_assets(strategy)):
-            repository.insert(build.get_records(strategy))
+            records = MappingAssetInRecord.get_records_from_asset(build.get_asset(strategy))
+
+            repository.insert(records)
 
     repository.close
 
